@@ -1,69 +1,138 @@
 view: agent_life_cycle {
-  # # You can specify the table name if it's different from the view name:
-  # sql_table_name: my_schema_name.tester ;;
-  #
-  # # Define your dimensions and measures here, like this:
-  # dimension: user_id {
-  #   description: "Unique ID for each user that has ordered"
-  #   type: number
-  #   sql: ${TABLE}.user_id ;;
-  # }
-  #
-  # dimension: lifetime_orders {
-  #   description: "The total number of orders for each user"
-  #   type: number
-  #   sql: ${TABLE}.lifetime_orders ;;
-  # }
-  #
-  # dimension_group: most_recent_purchase {
-  #   description: "The date when each user last ordered"
-  #   type: time
-  #   timeframes: [date, week, month, year]
-  #   sql: ${TABLE}.most_recent_purchase_at ;;
-  # }
-  #
-  # measure: total_lifetime_orders {
-  #   description: "Use this for counting lifetime orders across many users"
-  #   type: sum
-  #   sql: ${lifetime_orders} ;;
-  # }
-}
+  sql_table_name: dbo.AgentLifeCycle ;;
 
-# view: agent_life_cycle {
-#   # Or, you could make this view a derived table, like this:
-#   derived_table: {
-#     sql: SELECT
-#         user_id as user_id
-#         , COUNT(*) as lifetime_orders
-#         , MAX(orders.created_at) as most_recent_purchase_at
-#       FROM orders
-#       GROUP BY user_id
-#       ;;
-#   }
-#
-#   # Define your dimensions and measures here, like this:
-#   dimension: user_id {
-#     description: "Unique ID for each user that has ordered"
-#     type: number
-#     sql: ${TABLE}.user_id ;;
-#   }
-#
-#   dimension: lifetime_orders {
-#     description: "The total number of orders for each user"
-#     type: number
-#     sql: ${TABLE}.lifetime_orders ;;
-#   }
-#
-#   dimension_group: most_recent_purchase {
-#     description: "The date when each user last ordered"
-#     type: time
-#     timeframes: [date, week, month, year]
-#     sql: ${TABLE}.most_recent_purchase_at ;;
-#   }
-#
-#   measure: total_lifetime_orders {
-#     description: "Use this for counting lifetime orders across many users"
-#     type: sum
-#     sql: ${lifetime_orders} ;;
-#   }
-# }
+## Agent Life-Cycle Dimensions
+
+  dimension: life_cycle_month {
+    type: string
+    sql: ${TABLE}.LifeCycleMonth ;;
+  }
+
+  dimension: program_name {
+    type: string
+    sql: ${TABLE}.ProgramName ;;
+  }
+
+  dimension: class {
+    type: string
+    sql: ${TABLE}.Class ;;
+  }
+
+  dimension: agent_name {
+    type: string
+    sql: ${TABLE}.AgentName ;;
+  }
+
+  dimension: certifier_name {
+    type: string
+    sql: ${TABLE}.CertifierName ;;
+  }
+
+  dimension: assessor_name {
+    type: string
+    sql: ${TABLE}.AssessorName ;;
+  }
+
+
+## Certification Measures
+
+  measure: certification_active {
+    label: "Certification (Active)"
+    type: sum
+    sql: ${TABLE}.CertificationActive ;;
+  }
+
+  measure: certification_no_show {
+    type: sum
+    sql: ${TABLE}.CertificationNoShow ;;
+  }
+
+  measure: certification_left {
+    type: sum
+    sql: ${TABLE}.CertificationLeft ;;
+  }
+
+  measure: certification_passed {
+    type: sum
+    sql: ${TABLE}.CertificationPassed ;;
+  }
+
+  measure: certification_failed {
+    type: sum
+    sql: ${TABLE}.CertificationFailed ;;
+  }
+
+## Nesting Measures
+
+  measure: nesting_no_show {
+    type: sum
+    sql: ${TABLE}.NestingNoShow ;;
+  }
+
+  measure: nesting_active {
+    type: sum
+    sql: ${TABLE}.NestingActive ;;
+  }
+
+  measure: nesting_left {
+    type: sum
+    sql: ${TABLE}.NestingLeft ;;
+  }
+
+  measure: Nesting_passed {
+    type: sum
+    sql: ${TABLE}.NestingPassed ;;
+  }
+
+  measure: nesting_failed {
+    type: sum
+    sql: ${TABLE}.NestingFailed ;;
+  }
+
+
+## Production Measures
+
+  measure: production_start {
+    type: sum
+    sql: ${TABLE}.ProductionStart ;;
+  }
+
+  measure: production_adds {
+    type: sum
+    sql: ${TABLE}.ProductionAdds ;;
+  }
+
+  measure: production_removes {
+    type: sum
+    sql: ${TABLE}.ProductionRemoves ;;
+  }
+
+  measure: production_removes_pre_30 {
+    type: sum
+    sql: ${TABLE}.ProductionRemovesPre30 ;;
+  }
+
+  measure: production_removes_30_plus {
+    type: sum
+    sql: ${TABLE}.ProductionRemoves30Plus ;;
+  }
+
+  measure: production_end {
+    type: sum
+    sql: ${TABLE}.ProductionEnd ;;
+  }
+
+  measure: production_active {
+    type: sum
+    sql: ${TABLE}.ProductionActive ;;
+  }
+
+  measure: production_attrition {
+    type: number
+    value_format: "#.00\%"
+    sql:  100.0 * ${production_removes} / NULLIF(${production_active},0);;
+    drill_fields: [program_name]
+  }
+
+
+}
