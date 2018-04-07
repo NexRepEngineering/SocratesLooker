@@ -1,6 +1,7 @@
 view: agent_life_cycle {
   sql_table_name: dbo.AgentLifeCycle ;;
 
+
 ## Agent Life-Cycle Dimensions
 
   dimension: life_cycle_month {
@@ -34,17 +35,17 @@ view: agent_life_cycle {
   }
 
 
-## Certification Measures
 
-  measure: certification_active {
-    label: "Certification (Active)"
-    type: sum
-    sql: ${TABLE}.CertificationActive ;;
-  }
+## Certification Measures
 
   measure: certification_no_show {
     type: sum
     sql: ${TABLE}.CertificationNoShow ;;
+  }
+
+  measure: certification_active {
+    type: sum
+    sql: ${TABLE}.CertificationActive ;;
   }
 
   measure: certification_left {
@@ -62,7 +63,14 @@ view: agent_life_cycle {
     sql: ${TABLE}.CertificationFailed ;;
   }
 
-## Nesting Measures
+  measure: certification_attrition {
+    type: number
+    value_format: "#.00\%"
+    sql:  100.0 * ${certification_left} / NULLIF(${certification_active},0);;
+  }
+
+
+  ## Nesting Measures
 
   measure: nesting_no_show {
     type: sum
@@ -79,7 +87,7 @@ view: agent_life_cycle {
     sql: ${TABLE}.NestingLeft ;;
   }
 
-  measure: Nesting_passed {
+  measure: nesting_passed {
     type: sum
     sql: ${TABLE}.NestingPassed ;;
   }
@@ -131,7 +139,6 @@ view: agent_life_cycle {
     type: number
     value_format: "#.00\%"
     sql:  100.0 * ${production_removes} / NULLIF(${production_active},0);;
-    drill_fields: [program_name]
   }
 
 
