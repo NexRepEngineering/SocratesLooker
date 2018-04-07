@@ -97,6 +97,11 @@ view: agent_life_cycle {
     sql: ${TABLE}.NestingFailed ;;
   }
 
+  measure: nesting_attrition {
+    type: number
+    value_format: "#.00\%"
+    sql:  100.0 * ${nesting_left} / NULLIF(${nesting_active},0);;
+  }
 
 ## Production Measures
 
