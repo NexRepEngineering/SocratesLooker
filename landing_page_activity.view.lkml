@@ -7,6 +7,7 @@ view: landing_page_activity {
 
   dimension_group: activity_date {
     type: time
+    label: "Activity"
     timeframes: [date,week,month]
     sql: ${TABLE}.ActivityDate ;;
   }
@@ -96,6 +97,7 @@ view: landing_page_activity {
   }
 
   measure: completed_profile {
+    label: "Completed"
     type: sum
     sql: ${TABLE}.CompletedProfile ;;
   }
@@ -105,24 +107,27 @@ view: landing_page_activity {
 
   measure: clicked_percentage {
     type: number
-    label: "Clicked/Viewed 222"
+    label: "Clicked/Viewed"
     value_format: "#.00\%"
     sql:  100.0 * ${clicked} / NULLIF(${viewed},0);;
   }
 
   measure: abandoned_percentage {
     type: number
+    label: "Abandoned/Viewed"
     value_format: "#.00\%"
     sql:  100.0 * ${abandoned} / NULLIF(${viewed},0);;
   }
 
   measure: viewed_completed_percentage {
+    label: "Completed/Viewed"
     type: number
     value_format: "#.00\%"
     sql:  100.0 * ${completed_profile} / NULLIF(${viewed},0);;
   }
 
   measure: clicked_completed_percentage {
+    label: "Completed/Clicked"
     type: number
     value_format: "#.00\%"
     sql:  100.0 * ${completed_profile} / NULLIF(${clicked},0);;
@@ -132,30 +137,35 @@ view: landing_page_activity {
 
 
   measure: completed_password_page_percent {
+    group_label: "Step Completion (Step/Clicked)"
     type: number
     value_format: "#.00\%"
     sql:  100.0 * ${completed_password} / NULLIF(${clicked},0);;
   }
 
   measure: completed_contact_page_percent {
+    group_label: "Step Completion (Step/Clicked)"
     type: number
     value_format: "#.00\%"
     sql:  100.0 * ${completed_contact_page} / NULLIF(${clicked},0);;
   }
 
   measure: completed_info_page_percent {
+    group_label: "Step Completion (Step/Clicked)"
     type: number
     value_format: "#.00\%"
     sql:  100.0 * ${completed_info_page} / NULLIF(${clicked},0);;
   }
 
   measure: completed_job_history_page_percent {
+    group_label: "Step Completion (Step/Clicked)"
     type: number
     value_format: "#.00\%"
     sql:  100.0 * ${completed_job_history} / NULLIF(${clicked},0);;
   }
 
   measure: completed_writing_sample_percent {
+    group_label: "Step Completion (Step/Clicked)"
     type: number
     value_format: "#.00\%"
     sql:  100.0 * ${completed_writing_sample} / NULLIF(${clicked},0);;
