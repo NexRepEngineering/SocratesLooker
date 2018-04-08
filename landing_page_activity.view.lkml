@@ -64,14 +64,6 @@ view: landing_page_activity {
   }
 
 
-## Measures - Prohibited State
-
-  measure: prohibited_state {
-    type: sum
-    sql: ${TABLE}.ProhibitedState ;;
-  }
-
-
 ## Measures (# - Step Completion)
 
   measure: completed_password {
@@ -108,6 +100,18 @@ view: landing_page_activity {
     type: sum
     sql: ${TABLE}.CompletedWritingSample ;;
   }
+
+
+
+
+## Measures - Prohibited State
+
+  measure: prohibited_state {
+    type: sum
+    sql: ${TABLE}.ProhibitedState ;;
+  }
+
+
 
 
 
