@@ -1,4 +1,4 @@
-view: sourcing_eam_member_activity {
+view: sourcing_team_member_activity {
 
   sql_table_name: dbo.SourcingTeamMemberActivity ;;
 
