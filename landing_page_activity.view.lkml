@@ -157,7 +157,7 @@ view: landing_page_activity {
     label: "Info Page"
     type: number
     value_format: "#.00\%"
-    sql:  100.0 * ${completed_info_page} / NULLIF(${clicked},0);;
+    sql:  100.0 * ( ${prohibited_state} + ${completed_info_page} ) / NULLIF(${clicked},0);;
   }
 
   measure: completed_job_history_page_percent {
