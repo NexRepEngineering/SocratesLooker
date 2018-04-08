@@ -134,10 +134,11 @@ view: landing_page_activity {
   }
 
 
-
+# Step Completion Measures
 
   measure: completed_password_page_percent {
     group_label: "Step Completion (Step/Clicked)"
+    label: "Password Page"
     type: number
     value_format: "#.00\%"
     sql:  100.0 * ${completed_password} / NULLIF(${clicked},0);;
@@ -145,6 +146,7 @@ view: landing_page_activity {
 
   measure: completed_contact_page_percent {
     group_label: "Step Completion (Step/Clicked)"
+    label: "Contact Page"
     type: number
     value_format: "#.00\%"
     sql:  100.0 * ${completed_contact_page} / NULLIF(${clicked},0);;
@@ -152,6 +154,7 @@ view: landing_page_activity {
 
   measure: completed_info_page_percent {
     group_label: "Step Completion (Step/Clicked)"
+    label: "Info Page"
     type: number
     value_format: "#.00\%"
     sql:  100.0 * ${completed_info_page} / NULLIF(${clicked},0);;
@@ -159,6 +162,7 @@ view: landing_page_activity {
 
   measure: completed_job_history_page_percent {
     group_label: "Step Completion (Step/Clicked)"
+    label: "Job History"
     type: number
     value_format: "#.00\%"
     sql:  100.0 * ${completed_job_history} / NULLIF(${clicked},0);;
@@ -166,6 +170,7 @@ view: landing_page_activity {
 
   measure: completed_writing_sample_percent {
     group_label: "Step Completion (Step/Clicked)"
+    label: "Writing Sample"
     type: number
     value_format: "#.00\%"
     sql:  100.0 * ${completed_writing_sample} / NULLIF(${clicked},0);;
