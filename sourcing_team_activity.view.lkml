@@ -57,10 +57,17 @@ view: sourcing_team_activity {
 ## Measures - Scheduling (#)
 
   measure: SchedulingTotal {
-    group_label: "Screening - #"
+    group_label: "Scheduling - #"
     type: sum
     sql: ${TABLE}.SchedulingTotal ;;
   }
+
+  measure: SchedulingConnectedScheduled {
+    group_label: "Scheduling - #"
+    type: sum
+    sql: ${TABLE}.SchedulingConnectedScheduled ;;
+  }
+
 
 
 ## Measures - Assessing (#)
