@@ -43,7 +43,7 @@ view: landing_page_activity {
   }
 
 
-## Measures - Clicked/Abandoned
+## Measures:  # - Clicked, Abandoned, Viewed
 
   measure: viewed {
     group_label: "# - Clicked, Abandoned, Viewed"
@@ -106,7 +106,7 @@ view: landing_page_activity {
   }
 
 
-# Measures - Step Completion (Step/Clicked)
+# Measure:  % - Clicked, Abandoned, Completed
 
   measure: clicked_percentage {
     group_label: "% - Clicked, Abandoned, Completed"
@@ -141,7 +141,7 @@ view: landing_page_activity {
   }
 
 
-# Measures - Step Completion (Step/Clicked)
+#  Measure:  % - Step Completion
 
   measure: completed_password_page_percent {
     group_label: "% - Step Completion"
