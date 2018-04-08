@@ -145,7 +145,7 @@ view: landing_page_activity {
 
   measure: completed_password_page_percent {
     group_label: "% - Step Completion"
-    label: "Password Page"
+    label: "Password"
     type: number
     value_format: "#.00\%"
     sql:  100.0 * ${completed_password} / NULLIF(${clicked},0);;
@@ -153,7 +153,7 @@ view: landing_page_activity {
 
   measure: completed_contact_page_percent {
     group_label: "% - Step Completion"
-    label: "Contact Page"
+    label: "Contact"
     type: number
     value_format: "#.00\%"
     sql:  100.0 * ${completed_contact_page} / NULLIF(${clicked},0);;
@@ -161,7 +161,7 @@ view: landing_page_activity {
 
   measure: completed_info_page_percent {
     group_label: "% - Step Completion"
-    label: "Info Page"
+    label: "Info"
     type: number
     value_format: "#.00\%"
     sql:  100.0 * ${completed_info_page} / NULLIF(${clicked},0);;
