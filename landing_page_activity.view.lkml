@@ -172,7 +172,7 @@ view: landing_page_activity {
   }
 
   measure: completed_info_page_percent {
-    group_label: "Step Completion (%)"
+    group_label: "xStep Completion (%)"
     label: "Info"
     type: number
     value_format: "#.00\%"
