@@ -5,10 +5,12 @@ view: landing_page_activity {
 
 ## Landing Page Activity Dimensions
 
-  dimension: session_date {
-    type: date
-    sql: ${TABLE}.SessionDate ;;
+  dimension_group: viewed_date {
+    type: time
+    timeframes: [date,week,month]
+    sql: ${TABLE}.ViewedDate ;;
   }
+
 
   dimension: landing_page_step {
     type: string
@@ -42,7 +44,7 @@ view: landing_page_activity {
 
 
 
-## Landing Page Activity Measures
+## Measures - Clicked/Abandoned
 
   measure: viewed {
     type: sum
@@ -72,13 +74,15 @@ view: landing_page_activity {
   }
 
 
-
+## Measures - Prohibited State
 
   measure: prohibited_state {
     type: sum
     sql: ${TABLE}.ProhibitedState ;;
   }
 
+
+## Measures - Steps in the Profile
 
   measure: completed_password {
     type: sum
@@ -110,8 +114,17 @@ view: landing_page_activity {
     sql: ${TABLE}.CompletedProfile ;;
   }
 
+  measure: viewed_completed_percentage {
+    type: number
+    value_format: "#.00\%"
+    sql:  100.0 * ${completed_profile} / NULLIF(${viewed},0);;
+  }
 
-
+  measure: clicked_completed_percentage {
+    type: number
+    value_format: "#.00\%"
+    sql:  100.0 * ${completed_profile} / NULLIF(${clicked},0);;
+  }
 
 
 }
