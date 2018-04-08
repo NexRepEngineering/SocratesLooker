@@ -43,34 +43,34 @@ view: landing_page_activity {
   }
 
 
-## Measures (# - Landing Page)
+## Measures (Landing Page - #)
 
   measure: viewed {
-    group_label: "# - Landing Page"
+    group_label: "Landing Page (#)"
     type: sum
     sql: ${TABLE}.Viewed ;;
   }
 
   measure: abandoned {
-    group_label: "# - Landing Page"
+    group_label: "Landing Page (#)"
     type: sum
     sql: ${TABLE}.Abandoned ;;
   }
 
   measure: clicked {
-    group_label: "# - Landing Page"
+    group_label: "Landing Page (#)"
     type: sum
     sql: ${TABLE}.Clicked ;;
   }
 
   measure: completed_profile {
-    group_label: "# - Landing Page"
+    group_label: "Landing Page (#)"
     type: sum
     sql: ${TABLE}.CompletedProfile ;;
   }
 
   measure: prohibited_state {
-    group_label: "# - Landing Page"
+    group_label: "Landing Page (#)"
     type: sum
     sql: ${TABLE}.ProhibitedState ;;
   }
@@ -79,35 +79,35 @@ view: landing_page_activity {
 ## Measures (# - Step Completion)
 
   measure: completed_password {
-    group_label: "# - Step Completion"
+    group_label: "Step Completion (#)"
     label: "Password"
     type: sum
     sql: ${TABLE}.CompletedPassword ;;
   }
 
   measure: completed_contact_page {
-    group_label: "# - Step Completion"
+    group_label: "Step Completion (#)"
     label: "Contact"
     type: sum
     sql: ${TABLE}.CompletedContactPage ;;
   }
 
   measure: completed_info_page {
-    group_label: "# - Step Completion"
+    group_label: "Step Completion (#)"
     label: "Info"
     type: sum
     sql: ${TABLE}.CompletedInfoPage ;;
   }
 
   measure: completed_job_history {
-    group_label: "# - Step Completion"
+    group_label: "Step Completion (#)"
     label: "Job History"
     type: sum
     sql: ${TABLE}.CompletedJobHistory ;;
   }
 
   measure: completed_writing_sample {
-    group_label: "# - Step Completion"
+    group_label: "Step Completion (#)"
     label: "Writing Sample"
     type: sum
     sql: ${TABLE}.CompletedWritingSample ;;
@@ -117,7 +117,7 @@ view: landing_page_activity {
 ## Measure  (% - Clicked, Abandoned, Completed)
 
   measure: clicked_percentage {
-    group_label: "% - Landing Page"
+    group_label: "Landing Page (%)"
     type: number
     label: "Clicked/Viewed"
     value_format: "#.00\%"
@@ -125,7 +125,7 @@ view: landing_page_activity {
   }
 
   measure: abandoned_percentage {
-    group_label: "% - Landing Page"
+    group_label: "Landing Page (%)"
     type: number
     label: "Abandoned/Viewed"
     value_format: "#.00\%"
@@ -133,7 +133,7 @@ view: landing_page_activity {
   }
 
   measure: viewed_completed_percentage {
-    group_label: "% - Landing Page"
+    group_label: "Landing Page (%)"
     label: "Completed/Viewed"
     type: number
     value_format: "#.00\%"
@@ -141,7 +141,7 @@ view: landing_page_activity {
   }
 
   measure: clicked_completed_percentage {
-    group_label: "% - Landing Page"
+    group_label: "Landing Page (%)"
     label: "Completed/Clicked"
     type: number
     value_format: "#.00\%"
@@ -152,7 +152,7 @@ view: landing_page_activity {
 ## Measures (% - Step Completion)
 
   measure: completed_password_page_percent {
-    group_label: "% - Step Completion"
+    group_label: "Step Completion (%)"
     label: "Password"
     type: number
     value_format: "#.00\%"
@@ -160,7 +160,7 @@ view: landing_page_activity {
   }
 
   measure: completed_contact_page_percent {
-    group_label: "% - Step Completion"
+    group_label: "Step Completion (%)"
     label: "Contact"
     type: number
     value_format: "#.00\%"
@@ -168,7 +168,7 @@ view: landing_page_activity {
   }
 
   measure: completed_info_page_percent {
-    group_label: "% - Step Completion"
+    group_label: "Step Completion (%)"
     label: "Info"
     type: number
     value_format: "#.00\%"
@@ -176,7 +176,7 @@ view: landing_page_activity {
   }
 
   measure: completed_job_history_page_percent {
-    group_label: "% - Step Completion"
+    group_label: "Step Completion (%)"
     label: "Job History"
     type: number
     value_format: "#.00\%"
@@ -184,7 +184,7 @@ view: landing_page_activity {
   }
 
   measure: completed_writing_sample_percent {
-    group_label: "% - Step Completion"
+    group_label: "Step Completion (%)"
     label: "Writing Sample"
     type: number
     value_format: "#.00\%"
