@@ -45,7 +45,6 @@ view: landing_page_activity {
 ## Measures - Clicked/Abandoned
 
   measure: viewed {
-    view_label: "Viewed"
     type: sum
     sql: ${TABLE}.Viewed ;;
   }
