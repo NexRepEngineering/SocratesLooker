@@ -43,7 +43,8 @@ view: landing_page_activity {
   }
 
 
-## Measures (Landing Page - #)
+
+## Measures - Landing Page (#)
 
   measure: viewed {
     group_label: "Landing Page (#)"
@@ -76,7 +77,44 @@ view: landing_page_activity {
   }
 
 
-## Measures (# - Step Completion)
+
+## Measure -- Landing Page (%)
+
+  measure: clicked_percentage {
+    group_label: "Landing Page (%)"
+    type: number
+    label: "Clicked/Viewed"
+    value_format: "#.00\%"
+    sql:  100.0 * ${clicked} / NULLIF(${viewed},0);;
+  }
+
+  measure: abandoned_percentage {
+    group_label: "Landing Page (%)"
+    type: number
+    label: "Abandoned/Viewed"
+    value_format: "#.00\%"
+    sql:  100.0 * ${abandoned} / NULLIF(${viewed},0);;
+  }
+
+  measure: viewed_completed_percentage {
+    group_label: "Landing Page (%)"
+    label: "Completed/Viewed"
+    type: number
+    value_format: "#.00\%"
+    sql:  100.0 * ${completed_profile} / NULLIF(${viewed},0);;
+  }
+
+  measure: clicked_completed_percentage {
+    group_label: "Landing Page (%)"
+    label: "Completed/Clicked"
+    type: number
+    value_format: "#.00\%"
+    sql:  100.0 * ${completed_profile} / NULLIF(${clicked},0);;
+  }
+
+
+
+## Measures - Step Completion (#)
 
   measure: completed_password {
     group_label: "Step Completion (#)"
@@ -114,42 +152,8 @@ view: landing_page_activity {
   }
 
 
-## Measure  (% - Clicked, Abandoned, Completed)
 
-  measure: clicked_percentage {
-    group_label: "Landing Page (%)"
-    type: number
-    label: "Clicked/Viewed"
-    value_format: "#.00\%"
-    sql:  100.0 * ${clicked} / NULLIF(${viewed},0);;
-  }
-
-  measure: abandoned_percentage {
-    group_label: "Landing Page (%)"
-    type: number
-    label: "Abandoned/Viewed"
-    value_format: "#.00\%"
-    sql:  100.0 * ${abandoned} / NULLIF(${viewed},0);;
-  }
-
-  measure: viewed_completed_percentage {
-    group_label: "Landing Page (%)"
-    label: "Completed/Viewed"
-    type: number
-    value_format: "#.00\%"
-    sql:  100.0 * ${completed_profile} / NULLIF(${viewed},0);;
-  }
-
-  measure: clicked_completed_percentage {
-    group_label: "Landing Page (%)"
-    label: "Completed/Clicked"
-    type: number
-    value_format: "#.00\%"
-    sql:  100.0 * ${completed_profile} / NULLIF(${clicked},0);;
-  }
-
-
-## Measures (% - Step Completion)
+## Measures - Step Completion (%)
 
   measure: completed_password_page_percent {
     group_label: "Step Completion (%)"
