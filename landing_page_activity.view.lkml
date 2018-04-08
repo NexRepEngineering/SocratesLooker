@@ -165,7 +165,7 @@ view: landing_page_activity {
     label: "Job History"
     type: number
     value_format: "#.00\%"
-    sql:  100.0 * ${completed_job_history} / NULLIF(${clicked},0);;
+    sql:  100.0 * ( ${prohibited_state} + ${completed_job_history} ) / NULLIF(${clicked},0);;
   }
 
   measure: completed_writing_sample_percent {
@@ -173,7 +173,7 @@ view: landing_page_activity {
     label: "Writing Sample"
     type: number
     value_format: "#.00\%"
-    sql:  100.0 * ${completed_writing_sample} / NULLIF(${clicked},0);;
+    sql:  100.0 * ( ${prohibited_state} + ${completed_writing_sample} ) / NULLIF(${clicked},0);;
   }
 
 
