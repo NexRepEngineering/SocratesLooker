@@ -1,6 +1,6 @@
 view: sourcing_team_activity {
 
-  sql_table_name: dbo.SourcingTeamMemberActivity ;;
+  sql_table_name: dbo.SourcingTeamActivity ;;
 
   dimension_group: activity_date {
     type: time
