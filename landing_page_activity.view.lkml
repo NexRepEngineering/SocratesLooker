@@ -43,25 +43,32 @@ view: landing_page_activity {
   }
 
 
-## Measures (# - Clicked, Abandoned, Viewed)
+## Measures (# - Clicked, Abandoned, Viewed, Completed)
 
   measure: viewed {
-    group_label: "# - Clicked, Abandoned, Viewed"
+    group_label: "# - Clicked, Abandoned, Viewed, Completed"
     type: sum
     sql: ${TABLE}.Viewed ;;
   }
 
   measure: abandoned {
-    group_label: "# - Clicked, Abandoned, Viewed"
+    group_label: "# - Clicked, Abandoned, Viewed, Completed"
     type: sum
     sql: ${TABLE}.Abandoned ;;
   }
 
   measure: clicked {
-    group_label: "# - Clicked, Abandoned, Viewed"
+    group_label: "# - Clicked, Abandoned, Viewed, Completed"
     type: sum
     sql: ${TABLE}.Clicked ;;
   }
+
+  measure: completed_profile {
+    group_label: "# - Clicked, Abandoned, Viewed, Completed"
+    type: sum
+    sql: ${TABLE}.CompletedProfile ;;
+  }
+
 
 
 ## Measures (# - Step Completion)
@@ -119,11 +126,6 @@ view: landing_page_activity {
 
 
 
-  measure: completed_profile {
-    label: "Completed"
-    type: sum
-    sql: ${TABLE}.CompletedProfile ;;
-  }
 
 
 ## Measure  (% - Clicked, Abandoned, Completed)
