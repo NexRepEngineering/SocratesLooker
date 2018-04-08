@@ -143,7 +143,7 @@ view: landing_page_activity {
   measure: completed_password_page_percent {
     group_label: "% - Step Completion"
     label: "Password Page"
-    description: "Password/Clicked"
+    description: "Completed password page divided by landing page clicked."
     type: number
     value_format: "#.00\%"
     sql:  100.0 * ${completed_password} / NULLIF(${clicked},0);;
