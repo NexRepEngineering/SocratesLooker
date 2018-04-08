@@ -42,7 +42,6 @@ view: landing_page_activity {
   }
 
 
-
 ## Measures - Clicked/Abandoned
 
   measure: viewed {
@@ -58,18 +57,6 @@ view: landing_page_activity {
   measure: clicked {
     type: sum
     sql: ${TABLE}.Clicked ;;
-  }
-
-  measure: clicked_percentage {
-    type: number
-    value_format: "#.00\%"
-    sql:  100.0 * ${clicked} / NULLIF(${viewed},0);;
-  }
-
-  measure: abandoned_percentage {
-    type: number
-    value_format: "#.00\%"
-    sql:  100.0 * ${abandoned} / NULLIF(${viewed},0);;
   }
 
 
@@ -113,6 +100,21 @@ view: landing_page_activity {
     sql: ${TABLE}.CompletedProfile ;;
   }
 
+
+## Measures - Calculated Percentages
+
+  measure: clicked_percentage {
+    type: number
+    value_format: "#.00\%"
+    sql:  100.0 * ${clicked} / NULLIF(${viewed},0);;
+  }
+
+  measure: abandoned_percentage {
+    type: number
+    value_format: "#.00\%"
+    sql:  100.0 * ${abandoned} / NULLIF(${viewed},0);;
+  }
+
   measure: viewed_completed_percentage {
     type: number
     value_format: "#.00\%"
@@ -123,6 +125,31 @@ view: landing_page_activity {
     type: number
     value_format: "#.00\%"
     sql:  100.0 * ${completed_profile} / NULLIF(${clicked},0);;
+  }
+
+
+  measure: completed_contact_page_percent {
+    type: number
+    value_format: "#.00\%"
+    sql:  100.0 * ${completed_contact_page} / NULLIF(${clicked},0);;
+  }
+
+  measure: completed_info_page_percent {
+    type: number
+    value_format: "#.00\%"
+    sql:  100.0 * ${completed_info_page} / NULLIF(${clicked},0);;
+  }
+
+  measure: completed_job_history_page_percent {
+    type: number
+    value_format: "#.00\%"
+    sql:  100.0 * ${completed_job_history} / NULLIF(${clicked},0);;
+  }
+
+  measure: completed_writing_sample_percent {
+    type: number
+    value_format: "#.00\%"
+    sql:  100.0 * ${completed_writing_sample} / NULLIF(${clicked},0);;
   }
 
 
