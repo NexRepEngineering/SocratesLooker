@@ -56,23 +56,86 @@ view: sourcing_team_activity {
 
 ## Measures - Scheduling (#)
 
-  measure: SchedulingTotal {
+  measure: scheduling_total {
     group_label: "Scheduling - #"
     type: sum
     sql: ${TABLE}.SchedulingTotal ;;
   }
 
-  measure: SchedulingConnectedScheduled {
+  measure: scheduling_connected_scheduled {
     group_label: "Scheduling - #"
     type: sum
     sql: ${TABLE}.SchedulingConnectedScheduled ;;
+  }
+
+  measure: scheduling_connected_rejected {
+    group_label: "Scheduling - #"
+    type: sum
+    sql: ${TABLE}.SchedulingConnectedRejected ;;
+  }
+
+  measure: scheduling_connected_declined {
+    group_label: "Scheduling - #"
+    type: sum
+    sql: ${TABLE}.SchedulingConnectedDeclined ;;
+  }
+
+  measure: scheduling_voicemail {
+    group_label: "Scheduling - #"
+    type: sum
+    sql: ${TABLE}.SchedulingVoicemail ;;
+  }
+
+  measure: Scheduling_no_answer {
+    group_label: "Scheduling - #"
+    type: sum
+    sql: ${TABLE}.SchedulingNoAnswer ;;
+  }
+
+  measure: scheduling_bad_numbers {
+    group_label: "Scheduling - #"
+    type: sum
+    sql: ${TABLE}.SchedulingBadNumbers ;;
   }
 
 
 
 ## Measures - Assessing (#)
 
+  measure: assessing_total {
+    group_label: "Assessing - #"
+    type: sum
+    sql: ${TABLE}.AssessingTotal ;;
+  }
 
+  measure: assessing_invited {
+    group_label: "Assessing - #"
+    type: sum
+    sql: ${TABLE}.AssessingInvited ;;
+  }
 
+  measure: assessing_wait_listed {
+    group_label: "Assessing - #"
+    type: sum
+    sql: ${TABLE}.AssessingWaitListed ;;
+  }
+
+  measure: assessing_rejected {
+    group_label: "Assessing - #"
+    type: sum
+    sql: ${TABLE}.AssessingRejected ;;
+  }
+
+  measure: assessing_declined {
+    group_label: "Assessing - #"
+    type: sum
+    sql: ${TABLE}.AssessingDeclined ;;
+  }
+
+  measure: assessing_missed {
+    group_label: "Assessing - #"
+    type: sum
+    sql: ${TABLE}.AssessingMissed ;;
+  }
 
   }
