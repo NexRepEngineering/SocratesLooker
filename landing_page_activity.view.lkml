@@ -46,19 +46,19 @@ view: landing_page_activity {
 ## Measures - Clicked/Abandoned
 
   measure: viewed {
-    group_label: "# - Viewed, Abandoned, Clicked"
+    group_label: "# - Clicked, Abandoned, Viewed"
     type: sum
     sql: ${TABLE}.Viewed ;;
   }
 
   measure: abandoned {
-    group_label: "# - Viewed, Abandoned, Clicked"
+    group_label: "# - Clicked, Abandoned, Viewed"
     type: sum
     sql: ${TABLE}.Abandoned ;;
   }
 
   measure: clicked {
-    group_label: "# - Viewed, Abandoned, Clicked"
+    group_label: "# - Clicked, Abandoned, Viewed"
     type: sum
     sql: ${TABLE}.Clicked ;;
   }
