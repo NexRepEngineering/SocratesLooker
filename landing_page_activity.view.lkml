@@ -43,32 +43,37 @@ view: landing_page_activity {
   }
 
 
-## Measures (# - Clicked, Abandoned, Viewed, Completed)
+## Measures (# - Landing Page)
 
   measure: viewed {
-    group_label: "# - Clicked, Abandoned, Viewed, Completed"
+    group_label: "# - Landing Page"
     type: sum
     sql: ${TABLE}.Viewed ;;
   }
 
   measure: abandoned {
-    group_label: "# - Clicked, Abandoned, Viewed, Completed"
+    group_label: "# - Landing Page"
     type: sum
     sql: ${TABLE}.Abandoned ;;
   }
 
   measure: clicked {
-    group_label: "# - Clicked, Abandoned, Viewed, Completed"
+    group_label: "# - Landing Page"
     type: sum
     sql: ${TABLE}.Clicked ;;
   }
 
   measure: completed_profile {
-    group_label: "# - Clicked, Abandoned, Viewed, Completed"
+    group_label: "# - Landing Page"
     type: sum
     sql: ${TABLE}.CompletedProfile ;;
   }
 
+  measure: prohibited_state {
+    group_label: "# - Landing Page"
+    type: sum
+    sql: ${TABLE}.ProhibitedState ;;
+  }
 
 
 ## Measures (# - Step Completion)
@@ -109,29 +114,10 @@ view: landing_page_activity {
   }
 
 
-
-
-## Measures - Prohibited State
-
-  measure: prohibited_state {
-    type: sum
-    sql: ${TABLE}.ProhibitedState ;;
-  }
-
-
-
-
-
-
-
-
-
-
-
 ## Measure  (% - Clicked, Abandoned, Completed)
 
   measure: clicked_percentage {
-    group_label: "% - Clicked, Abandoned, Completed"
+    group_label: "% - Landing Page"
     type: number
     label: "Clicked/Viewed"
     value_format: "#.00\%"
@@ -139,7 +125,7 @@ view: landing_page_activity {
   }
 
   measure: abandoned_percentage {
-    group_label: "% - Clicked, Abandoned, Completed"
+    group_label: "% - Landing Page"
     type: number
     label: "Abandoned/Viewed"
     value_format: "#.00\%"
@@ -147,7 +133,7 @@ view: landing_page_activity {
   }
 
   measure: viewed_completed_percentage {
-    group_label: "% - Clicked, Abandoned, Completed"
+    group_label: "% - Landing Page"
     label: "Completed/Viewed"
     type: number
     value_format: "#.00\%"
@@ -155,7 +141,7 @@ view: landing_page_activity {
   }
 
   measure: clicked_completed_percentage {
-    group_label: "% - Clicked, Abandoned, Completed"
+    group_label: "% - Landing Page"
     label: "Completed/Clicked"
     type: number
     value_format: "#.00\%"
