@@ -46,16 +46,19 @@ view: landing_page_activity {
 ## Measures - Clicked/Abandoned
 
   measure: viewed {
+    group_label: "# - Viewed, Abandoned, Clicked"
     type: sum
     sql: ${TABLE}.Viewed ;;
   }
 
   measure: abandoned {
+    group_label: "# - Viewed, Abandoned, Clicked"
     type: sum
     sql: ${TABLE}.Abandoned ;;
   }
 
   measure: clicked {
+    group_label: "# - Viewed, Abandoned, Clicked"
     type: sum
     sql: ${TABLE}.Clicked ;;
   }
@@ -143,14 +146,13 @@ view: landing_page_activity {
   measure: completed_password_page_percent {
     group_label: "% - Step Completion"
     label: "Password Page"
-    description: "Completed password page divided by landing page clicked."
     type: number
     value_format: "#.00\%"
     sql:  100.0 * ${completed_password} / NULLIF(${clicked},0);;
   }
 
   measure: completed_contact_page_percent {
-    group_label: "Step Completion (Step/Clicked)"
+    group_label: "% - Step Completion"
     label: "Contact Page"
     type: number
     value_format: "#.00\%"
@@ -158,7 +160,7 @@ view: landing_page_activity {
   }
 
   measure: completed_info_page_percent {
-    group_label: "Step Completion (Step/Clicked)"
+    group_label: "% - Step Completion"
     label: "Info Page"
     type: number
     value_format: "#.00\%"
@@ -166,7 +168,7 @@ view: landing_page_activity {
   }
 
   measure: completed_job_history_page_percent {
-    group_label: "Step Completion (Step/Clicked)"
+    group_label: "% - Step Completion"
     label: "Job History"
     type: number
     value_format: "#.00\%"
@@ -174,7 +176,7 @@ view: landing_page_activity {
   }
 
   measure: completed_writing_sample_percent {
-    group_label: "Step Completion (Step/Clicked)"
+    group_label: "% - Step Completion"
     label: "Writing Sample"
     type: number
     value_format: "#.00\%"
