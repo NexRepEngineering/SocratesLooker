@@ -127,6 +127,12 @@ view: landing_page_activity {
     sql:  100.0 * ${completed_profile} / NULLIF(${clicked},0);;
   }
 
+  measure: completed_password_page_percent {
+    type: number
+    value_format: "#.00\%"
+    sql:  100.0 * ${completed_password} / NULLIF(${clicked},0);;
+  }
+
 
   measure: completed_contact_page_percent {
     type: number
