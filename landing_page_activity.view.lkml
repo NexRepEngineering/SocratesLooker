@@ -66,6 +66,7 @@ view: landing_page_activity {
 
   measure: completed_profile {
     group_label: "Landing Page - #"
+    label: "Completed"
     type: sum
     sql: ${TABLE}.CompletedProfile ;;
   }
