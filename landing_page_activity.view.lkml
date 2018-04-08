@@ -1,6 +1,6 @@
 view: landing_page_activity {
 
-  sql_table_name: dbo.AgentLifeCycle ;;
+  sql_table_name: dbo.LandingPageActivity ;;
 
 
 ## Landing Page Activity Dimensions
