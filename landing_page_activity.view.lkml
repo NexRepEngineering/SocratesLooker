@@ -105,6 +105,7 @@ view: landing_page_activity {
 
   measure: clicked_percentage {
     type: number
+    label: "Clicked/Viewed 222"
     value_format: "#.00\%"
     sql:  100.0 * ${clicked} / NULLIF(${viewed},0);;
   }
