@@ -106,7 +106,7 @@ view: landing_page_activity {
 # Measures - Step Completion (Step/Clicked)
 
   measure: clicked_percentage {
-    group_label: "% Viewed - Clicked - Abandoned - Completed"
+    group_label: "% - Clicked, Abandoned, Completed"
     type: number
     label: "Clicked/Viewed"
     value_format: "#.00\%"
@@ -114,7 +114,7 @@ view: landing_page_activity {
   }
 
   measure: abandoned_percentage {
-    group_label: "% Viewed - Clicked - Abandoned - Completed"
+    group_label: "% - Clicked, Abandoned, Completed"
     type: number
     label: "Abandoned/Viewed"
     value_format: "#.00\%"
@@ -122,7 +122,7 @@ view: landing_page_activity {
   }
 
   measure: viewed_completed_percentage {
-    group_label: "% Viewed - Clicked - Abandoned - Completed"
+    group_label: "% - Clicked, Abandoned, Completed"
     label: "Completed/Viewed"
     type: number
     value_format: "#.00\%"
@@ -130,7 +130,7 @@ view: landing_page_activity {
   }
 
   measure: clicked_completed_percentage {
-    group_label: "% Viewed - Clicked - Abandoned - Completed"
+    group_label: "% - Clicked, Abandoned, Completed"
     label: "Completed/Clicked"
     type: number
     value_format: "#.00\%"
@@ -141,8 +141,9 @@ view: landing_page_activity {
 # Measures - Step Completion (Step/Clicked)
 
   measure: completed_password_page_percent {
-    group_label: "Step Completion (Step/Clicked)"
+    group_label: "% - Step Completion"
     label: "Password Page"
+    description: "Password/Clicked"
     type: number
     value_format: "#.00\%"
     sql:  100.0 * ${completed_password} / NULLIF(${clicked},0);;
