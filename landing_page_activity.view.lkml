@@ -3,7 +3,7 @@ view: landing_page_activity {
   sql_table_name: dbo.LandingPageActivity ;;
 
 
-## Landing Page Activity Dimensions
+## Dimensions
 
   dimension_group: activity_date {
     type: time
@@ -43,7 +43,7 @@ view: landing_page_activity {
   }
 
 
-## Measures:  # - Clicked, Abandoned, Viewed
+## Measures (# - Clicked, Abandoned, Viewed)
 
   measure: viewed {
     group_label: "# - Clicked, Abandoned, Viewed"
@@ -72,32 +72,48 @@ view: landing_page_activity {
   }
 
 
-## Measures - Steps in the Profile
+## Measures (# - Step Completion)
 
   measure: completed_password {
+    group_label: "# - Step Completion"
+    label: "Password"
     type: sum
     sql: ${TABLE}.CompletedPassword ;;
   }
 
   measure: completed_contact_page {
+    group_label: "# - Step Completion"
+    label: "Contact"
     type: sum
     sql: ${TABLE}.CompletedContactPage ;;
   }
 
   measure: completed_info_page {
+    group_label: "# - Step Completion"
+    label: "Info"
     type: sum
     sql: ${TABLE}.CompletedInfoPage ;;
   }
 
   measure: completed_job_history {
+    group_label: "# - Step Completion"
+    label: "Job History"
     type: sum
     sql: ${TABLE}.CompletedJobHistory ;;
   }
 
   measure: completed_writing_sample {
+    group_label: "# - Step Completion"
+    label: "Writing Sample"
     type: sum
     sql: ${TABLE}.CompletedWritingSample ;;
   }
+
+
+
+
+
+
 
   measure: completed_profile {
     label: "Completed"
@@ -106,7 +122,7 @@ view: landing_page_activity {
   }
 
 
-# Measure:  % - Clicked, Abandoned, Completed
+## Measure  (% - Clicked, Abandoned, Completed)
 
   measure: clicked_percentage {
     group_label: "% - Clicked, Abandoned, Completed"
@@ -141,7 +157,7 @@ view: landing_page_activity {
   }
 
 
-#  Measure:  % - Step Completion
+## Measures (% - Step Completion)
 
   measure: completed_password_page_percent {
     group_label: "% - Step Completion"
@@ -182,6 +198,5 @@ view: landing_page_activity {
     value_format: "#.00\%"
     sql:  100.0 * ${completed_writing_sample} / NULLIF(${clicked},0);;
   }
-
 
 }
