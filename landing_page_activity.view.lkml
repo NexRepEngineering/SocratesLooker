@@ -103,9 +103,11 @@ view: landing_page_activity {
   }
 
 
-## Measures - Calculated Percentages
+# Measures - Step Completion (Step/Clicked)
 
   measure: clicked_percentage {
+    group_label: "% Viewed - Clicked - Abandoned - Completed"
+
     type: number
     label: "Clicked/Viewed"
     value_format: "#.00\%"
