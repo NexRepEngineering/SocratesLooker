@@ -11,6 +11,11 @@ view: landing_page_activity {
     sql: ${TABLE}.ViewedDate ;;
   }
 
+  dimension_group: activity_date {
+    type: time
+    timeframes: [date,week,month]
+    sql: ${TABLE}.ActivityDate ;;
+  }
 
   dimension: landing_page_step {
     type: string
