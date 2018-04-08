@@ -5,12 +5,6 @@ view: landing_page_activity {
 
 ## Landing Page Activity Dimensions
 
-  dimension_group: viewed_date {
-    type: time
-    timeframes: [date,week,month]
-    sql: ${TABLE}.ViewedDate ;;
-  }
-
   dimension_group: activity_date {
     type: time
     timeframes: [date,week,month]
