@@ -59,6 +59,19 @@ view: landing_page_activity {
     sql: ${TABLE}.Clicked ;;
   }
 
+  measure: clicked_percentage {
+    type: number
+    value_format: "#.00\%"
+    sql:  100.0 * ${clicked} / NULLIF(${viewed},0);;
+  }
+
+  measure: abandoned_percentage {
+    type: number
+    value_format: "#.00\%"
+    sql:  100.0 * ${abandoned} / NULLIF(${viewed},0);;
+  }
+
+
 
 
   measure: prohibited_state {
@@ -96,7 +109,6 @@ view: landing_page_activity {
     type: sum
     sql: ${TABLE}.CompletedProfile ;;
   }
-
 
 
 
